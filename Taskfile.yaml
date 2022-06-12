@@ -18,4 +18,4 @@ tasks:
   configure:
     desc: Start configuring cluster
     cmds:
-      - ansible-playbook kilip.homelab.generator
+      - ansible-playbook ansible/playbooks/generate.yml

@@ -1,0 +1,8 @@
+- name: Generate homelab config
+  hosts: localhost
+  vars:
+    homelab_age_public_key: "{{ lookup('env', 'SOPS_AGE_PUBLIC_KEY') }}"
+  tasks:
+    - name: Include generator role
+      include_role:
+        name: kilip.homelab.generator
