@@ -1,0 +1,21 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - task: deps
+
+  deps:
+    desc: Install project dependencies
+    cmds:
+      - ansible-galaxy collection install -r ansible/requirements.yml
+
+  configure:
+    desc: Start configuring cluster
+    cmds:
+      - ansible-playbook kilip.homelab.generator
